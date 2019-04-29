@@ -16,20 +16,25 @@ public class AlgoritmoJezReverse {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         /*ingreso del tamaño de arreglos*/
         System.out.print("\n Ingrese Numero de Datos a Ingresar : ");
-        int tam = Integer.parseInt(in.readLine());
+        int tam = Integer.parseInt("5");//in.readLine());
         /*creacion del arreglo*/
         int arr[] = new int[tam];
         System.out.println();
         /*lectura del arreglo*/
         int j = 0;
+        int[] elementos = new int[]{3,2,1,4,5};
         for (int i = 0; i < arr.length; i++) {
             j += 1;
-            System.out.print("Elemento " + j + " : ");
-            arr[i] = Integer.parseInt(in.readLine());
+            int cual = new java.util.Random().nextInt(5);
+            System.out.print("Elemento " + j + " : " + elementos[cual] + "\n");
+            arr[i] = Integer.parseInt("" + elementos[cual]);
         }
         reverseJez(arr);
     }
     static void reverseJez(int arreglo[]) {
+        if (arreglo == null) {
+            return;
+        }
         int impar = parImpar(arreglo);
         int inicio = 0;
         int fin = arreglo.length - 1;
@@ -46,12 +51,18 @@ public class AlgoritmoJezReverse {
         }
     }
     static int parImpar(int arreglo[]) {
+        if (arreglo == null) {
+            return 0;
+        }
         if (arreglo.length % 2 != 0) {
             return (arreglo.length / 2);
         }
         return 0;
     }
     static int sacarLimite(int arreglo [], int impar) {
+        if (arreglo == null) {
+            return -1;
+        }
         if (impar > 0) {
             return impar - 1;
         } else {
