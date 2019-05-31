@@ -25,7 +25,7 @@ public class AlgoritmoJezReverse {
         int[] elementos = new int[]{3,2,1,4,5};
         for (int i = 0; i < arr.length; i++) {
             j += 1;
-            int cual = new java.util.Random().nextInt(5);
+            int cual = new java.util.Random().nextInt(5); // returns a number between (0-4)
             System.out.print("Elemento " + j + " : " + elementos[cual] + "\n");
             arr[i] = Integer.parseInt("" + elementos[cual]);
         }
